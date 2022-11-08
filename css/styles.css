@@ -772,12 +772,18 @@ img {
 
   border: var(--title-text-color) solid 2px;
   border-radius: 2px;
-  fill: var(--white-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.form-checkbox:focus + .checkbox-icon {
+  border-color: var(--accent-color);
+}
+
 .form-checkbox:checked + .checkbox-icon {
   background-color: var(--accent-color);
-  border: none;
+  border-color: transparent;
+  fill: var(--white-color);
 }
 
 .submit-button {
